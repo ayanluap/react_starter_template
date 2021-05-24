@@ -1,0 +1,24 @@
+.btn {
+  &,
+  &:visited,
+  &:link {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    @include font2;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    text-decoration: none;
+  }
+
+  &--light {
+    background: $second-clr;
+    color: $grey-1;
+    @include transition1;
+
+    &:hover {
+      color: $grey-1;
+      padding: 1rem 3.5rem;
+    }
+  }
+}

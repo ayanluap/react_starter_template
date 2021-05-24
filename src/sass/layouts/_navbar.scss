@@ -6,6 +6,18 @@
   height: 9rem;
   width: 100vw;
   z-index: 1000;
+  @include transition1;
+
+  &__transparent {
+    background-color: transparent;
+    height: 10rem;
+  }
+
+  &__colored {
+    background-color: $white;
+    height: 8rem;
+    box-shadow: 0 0.2rem 1rem rgba($black, 0.1);
+  }
 
   &__brand {
     text-decoration: none;
@@ -15,7 +27,9 @@
     @include font1;
     color: $prime-clr;
     font-size: 3rem;
-    font-weight: 300;
+    text-transform: capitalize;
+    font-weight: 700;
+    text-decoration: none;
 
     @include respond(tab-land) {
       font-size: 3rem;
