@@ -1,0 +1,64 @@
+@mixin navbarLinksBefore {
+  content: '';
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50rem;
+  background-color: $second-clr;
+  opacity: 0;
+  left: 50%;
+  top: -20%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  @include respond(tab-land) {
+    content: none;
+  }
+}
+
+@mixin transition1 {
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+@mixin font1 {
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin font2 {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+// MEDIA QUERY MANAGER
+
+/*
+breakpoint argument classes-
+-phone      
+-tab-port
+-tab-land
+-[normal]
+-big-scr
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint==tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint==tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint==big-scr {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
